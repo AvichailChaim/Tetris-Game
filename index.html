@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>טטריס בעברית</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- חיבור לקובץ ה-CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- מסך פתיחה -->
+        <div id="start-screen">
+            <h1>ברוכים הבאים לטטריס</h1>
+            <label for="player-name">הזן את שמך:</label>
+            <input type="text" id="player-name" placeholder="שם שחקן">
+            <button id="start-button">התחל משחק</button>
+        </div>
+
+        <!-- אזור המשחק -->
+        <div id="game-area" style="display: none;">
+            <!-- מידע המשחק -->
+            <div id="game-info">
+                <p id="score">ניקוד: 0</p>
+                <p id="level">דרגה: 1</p>
+                <div id="next-piece-container">
+                    <p>הצורה הבאה:</p>
+                    <canvas id="next-piece" width="120" height="120"></canvas>
+                </div>
+            </div>
+
+            <!-- תוכן המשחק (כפתורים וקנבס) -->
+            <div id="game-content">
+                <!-- כפתורים למכשירים ניידים -->
+                <div id="mobile-controls">
+                    <button id="left-button">◄</button>
+                    <button id="rotate-button">⟳</button>
+                    <button id="right-button">►</button>
+                    <button id="down-button">▼</button>
+                </div>
+                <!-- קנבס המשחק -->
+                <canvas id="game-canvas" width="300" height="600"></canvas>
+            </div>
+        </div>
+
+        <!-- מסך סיום -->
+        <div id="end-screen" style="display: none;">
+            <h1>כל הכבוד, <span id="player-name-display"></span>!</h1>
+            <img src="assets/trophy.png" alt="גביע">
+            <p>ניקוד סופי: <span id="final-score"></span></p>
+            <audio id="applause-sound" src="assets/applause.mp3"></audio>
+            <button id="restart-button">שחק שוב</button>
+        </div>
+    </div>
+
+    <!-- חיבור לקובץ ה-JavaScript -->
+    <script src="game.js"></script>
+</body>
+</html>
